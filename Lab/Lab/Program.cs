@@ -1,4 +1,5 @@
 using SalesWinApp;
+
 namespace Lab;
 
 internal static class Program
