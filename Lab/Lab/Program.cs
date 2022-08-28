@@ -1,7 +1,7 @@
 using SalesWinApp;
 
-namespace Lab
-{
+namespace Lab;
+
     internal static class Program
     {
         /// <summary>
@@ -16,4 +16,3 @@ namespace Lab
             Application.Run(new frmLogin());
         }
     }
-}
