@@ -44,6 +44,7 @@
             this.numMemberId = new System.Windows.Forms.NumericUpDown();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numMemberId)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,7 +71,7 @@
             this.txtEmail.Location = new System.Drawing.Point(235, 74);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(195, 23);
-            this.txtEmail.TabIndex = 1;
+            this.txtEmail.TabIndex = 2;
             // 
             // label3
             // 
@@ -86,7 +87,7 @@
             this.txtCompanyName.Location = new System.Drawing.Point(235, 103);
             this.txtCompanyName.Name = "txtCompanyName";
             this.txtCompanyName.Size = new System.Drawing.Size(195, 23);
-            this.txtCompanyName.TabIndex = 1;
+            this.txtCompanyName.TabIndex = 3;
             // 
             // label4
             // 
@@ -102,7 +103,7 @@
             this.txtCity.Location = new System.Drawing.Point(235, 132);
             this.txtCity.Name = "txtCity";
             this.txtCity.Size = new System.Drawing.Size(195, 23);
-            this.txtCity.TabIndex = 1;
+            this.txtCity.TabIndex = 4;
             // 
             // label5
             // 
@@ -118,7 +119,7 @@
             this.txtCountry.Location = new System.Drawing.Point(235, 161);
             this.txtCountry.Name = "txtCountry";
             this.txtCountry.Size = new System.Drawing.Size(195, 23);
-            this.txtCountry.TabIndex = 1;
+            this.txtCountry.TabIndex = 5;
             // 
             // label6
             // 
@@ -135,7 +136,7 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(195, 23);
-            this.txtPassword.TabIndex = 1;
+            this.txtPassword.TabIndex = 6;
             // 
             // label7
             // 
@@ -152,18 +153,18 @@
             this.txtConfirmPassword.Name = "txtConfirmPassword";
             this.txtConfirmPassword.PasswordChar = '*';
             this.txtConfirmPassword.Size = new System.Drawing.Size(195, 23);
-            this.txtConfirmPassword.TabIndex = 1;
+            this.txtConfirmPassword.TabIndex = 7;
             // 
             // numMemberId
             // 
             this.numMemberId.Location = new System.Drawing.Point(235, 45);
             this.numMemberId.Name = "numMemberId";
             this.numMemberId.Size = new System.Drawing.Size(120, 23);
-            this.numMemberId.TabIndex = 2;
+            this.numMemberId.TabIndex = 1;
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(131, 271);
+            this.btnAdd.Location = new System.Drawing.Point(102, 271);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 3;
@@ -173,7 +174,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(280, 271);
+            this.btnCancel.Location = new System.Drawing.Point(355, 271);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 3;
@@ -181,12 +182,23 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(225, 271);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdate.TabIndex = 3;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
             // frmAddMember
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(564, 344);
             this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.numMemberId);
             this.Controls.Add(this.txtConfirmPassword);
@@ -203,7 +215,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "frmAddMember";
-            this.Text = "frmAddMember";
+            this.Text = "Add/Update Member";
+            this.Load += new System.EventHandler(this.frmAddMember_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numMemberId)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -228,5 +241,6 @@
         private NumericUpDown numMemberId;
         private Button btnAdd;
         private Button btnCancel;
+        private Button btnUpdate;
     }
 }

@@ -16,6 +16,7 @@ public partial class frmMemberManagement : Form
 {
     private SalesManagementContext _db = InstanceDBContext.Instance;
     private Member member = frmLogin.member;
+    public static Member selectedMember = null;
     public frmMemberManagement()
     {
         InitializeComponent();
@@ -85,19 +86,13 @@ public partial class frmMemberManagement : Form
         if (dataGridView1.SelectedRows.Count > 0)
         {
             int memberId = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["MemberId"].Value.ToString());
-            Member updateMember = _db.Members.Find(memberId);
-            if (updateMember != null)
+            selectedMember = _db.Members.Find(memberId);
+            if (selectedMember != null)
             {
-                if (updateMember.MemberId == member.MemberId)
-                {
-                    MessageBox.Show("This account currently in use, cannot update");
-                }
-                else
-                {
-                    _db.Members.Remove(updateMember);
-                    _db.SaveChanges();
-                    LoadData();
-                }
+                frmAddMember frmAddMember = new frmAddMember();
+                selectedMember = _db.Members.Find(memberId);
+                frmAddMember.ShowDialog();
+                LoadData();
             }
 
             //}
