@@ -37,6 +37,9 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtSearchProduct = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvManagement)).BeginInit();
             this.SuspendLayout();
@@ -55,6 +58,8 @@
             // 
             // mnuStripMember
             // 
+            this.mnuStripMember.Checked = true;
+            this.mnuStripMember.CheckState = System.Windows.Forms.CheckState.Checked;
             this.mnuStripMember.Name = "mnuStripMember";
             this.mnuStripMember.Size = new System.Drawing.Size(138, 20);
             this.mnuStripMember.Text = "Member Management";
@@ -74,7 +79,7 @@
             // dgvManagement
             // 
             this.dgvManagement.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvManagement.Location = new System.Drawing.Point(12, 27);
+            this.dgvManagement.Location = new System.Drawing.Point(12, 72);
             this.dgvManagement.Name = "dgvManagement";
             this.dgvManagement.RowTemplate.Height = 25;
             this.dgvManagement.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -83,7 +88,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(110, 405);
+            this.btnAdd.Location = new System.Drawing.Point(110, 450);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 2;
@@ -92,7 +97,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(259, 405);
+            this.btnDelete.Location = new System.Drawing.Point(259, 450);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 2;
@@ -101,7 +106,7 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(404, 405);
+            this.btnUpdate.Location = new System.Drawing.Point(404, 450);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate.TabIndex = 2;
@@ -110,7 +115,7 @@
             // 
             // btnLogout
             // 
-            this.btnLogout.Location = new System.Drawing.Point(581, 405);
+            this.btnLogout.Location = new System.Drawing.Point(581, 450);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(75, 23);
             this.btnLogout.TabIndex = 2;
@@ -118,11 +123,39 @@
             this.btnLogout.UseVisualStyleBackColor = true;
             this.btnLogout.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(89, 37);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(87, 15);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Search Product";
+            // 
+            // txtSearchProduct
+            // 
+            this.txtSearchProduct.Location = new System.Drawing.Point(205, 29);
+            this.txtSearchProduct.Name = "txtSearchProduct";
+            this.txtSearchProduct.Size = new System.Drawing.Size(372, 23);
+            this.txtSearchProduct.TabIndex = 5;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(599, 29);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.TabIndex = 6;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            // 
             // frmManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 488);
+            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.txtSearchProduct);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnDelete);
@@ -151,5 +184,8 @@
         private Button btnDelete;
         private Button btnUpdate;
         private Button btnLogout;
+        private Label label1;
+        private TextBox txtSearchProduct;
+        private Button btnSearch;
     }
 }
