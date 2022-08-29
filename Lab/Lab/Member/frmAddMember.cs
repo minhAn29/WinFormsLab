@@ -130,16 +130,23 @@ public partial class frmAddMember : Form
         if (ValidAddInfo())
         {
             Member updatedMember = frmMemberManagement.selectedMember;
-            updatedMember.MemberId = decimal.ToInt32(numMemberId.Value);
-            updatedMember.Email = email;
-            updatedMember.CompanyName = companyName;
-            updatedMember.City = city;
-            updatedMember.Country = country;
-            updatedMember.Password = password;
+            if (updatedMember != null)
+            {
+                updatedMember.MemberId = decimal.ToInt32(numMemberId.Value);
+                updatedMember.Email = email;
+                updatedMember.CompanyName = companyName;
+                updatedMember.City = city;
+                updatedMember.Country = country;
+                updatedMember.Password = password;
 
-            _db.Update(updatedMember);
-            _db.SaveChanges();
-            this.Close();
+                _db.Update(updatedMember);
+                _db.SaveChanges();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("You are not allowed when click Add button");
+            }
         }
     }
 }

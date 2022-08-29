@@ -14,7 +14,8 @@ namespace SalesWinApp
 {
     public partial class frmUpdateOrder : Form
     {
-        private SalesManagementContext db = new SalesManagementContext(GetConnectionString());
+        private SalesManagementContext db = InstanceDBContext.Instance;
+        private Order selectedOrder = frmOrderManagement.selectedOrder;
         public frmUpdateOrder(Order selectedOrder)
         {
             InitializeComponent();
@@ -50,15 +51,12 @@ namespace SalesWinApp
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            var order = new Order()
-            {
-                OrderDate = orderDatePicker.Value,
-                RequiredDate = requireDatePicker.Value,
-                ShippedDate = shippedDatePicker.Value,
-                Freight = decFreight.Value,
-                MemberId = (int)memberList.SelectedValue
-            };
-            db.Orders.Update(order);
+            selectedOrder.OrderDate = orderDatePicker.Value;
+            selectedOrder.RequiredDate = requireDatePicker.Value;
+            selectedOrder.ShippedDate = shippedDatePicker.Value;
+            selectedOrder.Freight = decFreight.Value;
+            selectedOrder.MemberId = (int)memberList.SelectedValue;
+            db.Orders.Update(selectedOrder);
             db.SaveChanges();
             this.Close(); //Close form dialog
         }

@@ -58,6 +58,11 @@
             // decFreight
             // 
             this.decFreight.Location = new System.Drawing.Point(138, 193);
+            this.decFreight.Maximum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            0});
             this.decFreight.Name = "decFreight";
             this.decFreight.Size = new System.Drawing.Size(200, 23);
             this.decFreight.TabIndex = 25;
@@ -172,7 +177,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "frmUpdateOrder";
-            this.Text = "frmUpdateOrder";
+            this.Text = "Update Order";
             ((System.ComponentModel.ISupportInitialize)(this.decFreight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.intOrderId)).EndInit();
             this.ResumeLayout(false);

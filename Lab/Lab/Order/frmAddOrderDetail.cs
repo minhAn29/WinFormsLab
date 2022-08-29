@@ -14,7 +14,7 @@ namespace SalesWinApp
 {
     public partial class frmAddOrderDetail : Form
     {
-        private SalesManagementContext db = new SalesManagementContext(GetConnectionString());
+        private SalesManagementContext db = InstanceDBContext.Instance;
 
         public frmAddOrderDetail(Order selectedOrder)
         {
@@ -42,13 +42,18 @@ namespace SalesWinApp
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            var orderDetail = new OrderDetail()
+            int orderId = decimal.ToInt32(intOrderId.Value);
+            int productId = int.Parse(productList.SelectedValue.ToString());
+            decimal unitPrice = db.Products.Find(productId).UnitPrice;
+            int quantity = decimal.ToInt32(intQuantity.Value);
+            double discount = (double)floatDiscount.Value / 100;
+            OrderDetail orderDetail = new OrderDetail()
             {
-                OrderId = (int)intOrderId.Value,
-                UnitPrice = (decimal)db.Products.Find((int)intOrderId.Value).UnitPrice,
-                Quantity = (int)intQuantity.Value,
-                Discount = (double)floatDiscount.Value / 100,
-                ProductId = (int)productList.SelectedValue
+                OrderId = orderId,
+                ProductId = productId,
+                UnitPrice = unitPrice,
+                Quantity = quantity,
+                Discount = discount
             };
             db.OrderDetails.Add(orderDetail);
             db.SaveChanges();
