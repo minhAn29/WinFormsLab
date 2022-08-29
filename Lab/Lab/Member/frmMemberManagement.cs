@@ -89,9 +89,9 @@ public partial class frmMemberManagement : Form
             selectedMember = _db.Members.Find(memberId);
             if (selectedMember != null)
             {
-                frmAddMember frmAddMember = new frmAddMember();
+                frmUpdateMember frmUpdateMember=new frmUpdateMember();
                 selectedMember = _db.Members.Find(memberId);
-                frmAddMember.ShowDialog();
+                frmUpdateMember.ShowDialog();
                 LoadData();
             }
 

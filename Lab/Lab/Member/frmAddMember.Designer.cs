@@ -44,7 +44,6 @@
             this.numMemberId = new System.Windows.Forms.NumericUpDown();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numMemberId)).BeginInit();
             this.SuspendLayout();
             // 
@@ -167,7 +166,7 @@
             this.btnAdd.Location = new System.Drawing.Point(102, 271);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
-            this.btnAdd.TabIndex = 3;
+            this.btnAdd.TabIndex = 8;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -177,20 +176,10 @@
             this.btnCancel.Location = new System.Drawing.Point(355, 271);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 3;
+            this.btnCancel.TabIndex = 10;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Location = new System.Drawing.Point(225, 271);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
-            this.btnUpdate.TabIndex = 3;
-            this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // frmAddMember
             // 
@@ -198,7 +187,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(564, 344);
             this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.numMemberId);
             this.Controls.Add(this.txtConfirmPassword);
@@ -215,8 +203,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "frmAddMember";
-            this.Text = "Add/Update Member";
-            this.Load += new System.EventHandler(this.frmAddMember_Load);
+            this.Text = "Add Member";
             ((System.ComponentModel.ISupportInitialize)(this.numMemberId)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -241,6 +228,5 @@
         private NumericUpDown numMemberId;
         private Button btnAdd;
         private Button btnCancel;
-        private Button btnUpdate;
     }
 }

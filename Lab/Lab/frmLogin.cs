@@ -19,7 +19,7 @@ namespace Lab
             var strConn = config["ConnectionStrings:SalesManagementDB"];
             return strConn;
         }
-        private Tuple<string,string> GetDefaultAccount()
+        private Tuple<string, string> GetDefaultAccount()
         {
             IConfiguration config = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
@@ -27,7 +27,7 @@ namespace Lab
                 .Build();
             string email = config["DefaultAccount:Email"];
             string password = config["DefaultAccount:Password"];
-            return new Tuple<string,string>(email,password);
+            return new Tuple<string, string>(email, password);
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -44,7 +44,7 @@ namespace Lab
         {
             email = txtEmail.Text;
             password = txtPassword.Text;
-            if(email == null || email.Equals(""))
+            if (email == null || email.Equals(""))
             {
                 MessageBox.Show("MemberId was null");
                 txtEmail.Focus();
@@ -58,15 +58,16 @@ namespace Lab
             }
             else
             {
-                db=new SalesManagementContext(GetConnectionString());
+                db = new SalesManagementContext(GetConnectionString());
 
                 var defaultAcc = GetDefaultAccount();
-                if(email == defaultAcc.Item1 && password == defaultAcc.Item2)
+                if (email == defaultAcc.Item1 && password == defaultAcc.Item2)
                 {
                     MessageBox.Show("You are logging in with Admin account");
                     return true;
                 }
-                member=db.Members.Where(x=>x.Email==email && x.Password==password).FirstOrDefault();
+
+                member = db.Members.Where(x => x.Email == email && x.Password == password).FirstOrDefault();
                 if (member == null)
                 {
                     MessageBox.Show("Account does not exist");
@@ -82,10 +83,11 @@ namespace Lab
             {
                 this.Hide();
                 InstanceDBContext.Instance = db;
-                if(member == null)
+
+                if (member == null)
                 {
-                frmManagement frmManagement = new frmManagement();
-                frmManagement.Show();
+                    frmManagement frmManagement = new frmManagement();
+                    frmManagement.Show();
                 }
                 else
                 {
