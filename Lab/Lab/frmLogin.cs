@@ -19,6 +19,16 @@ namespace Lab
             var strConn = config["ConnectionStrings:SalesManagementDB"];
             return strConn;
         }
+        private Tuple<string,string> GetDefaultAccount()
+        {
+            IConfiguration config = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json", true, true)
+                .Build();
+            string email = config["DefaultAccount:Email"];
+            string password = config["DefaultAccount:Password"];
+            return new Tuple<string,string>(email,password);
+        }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
@@ -49,6 +59,13 @@ namespace Lab
             else
             {
                 db=new SalesManagementContext(GetConnectionString());
+
+                var defaultAcc = GetDefaultAccount();
+                if(email == defaultAcc.Item1 && password == defaultAcc.Item2)
+                {
+                    MessageBox.Show("You are logging in with Admin account");
+                    return true;
+                }
                 member=db.Members.Where(x=>x.Email==email && x.Password==password).FirstOrDefault();
                 if (member == null)
                 {
@@ -65,8 +82,17 @@ namespace Lab
             {
                 this.Hide();
                 InstanceDBContext.Instance = db;
+                if(member == null)
+                {
                 frmManagement frmManagement = new frmManagement();
                 frmManagement.Show();
+                }
+                else
+                {
+                    frmMember frmMember = new frmMember();
+                    frmMember.Show();
+
+                }
             }
         }
     }
