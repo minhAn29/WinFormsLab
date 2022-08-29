@@ -143,7 +143,7 @@
             this.Controls.Add(this.intOrderId);
             this.Controls.Add(this.label1);
             this.Name = "frmAddOrderDetail";
-            this.Text = "frmAddOrderDetail";
+            this.Text = "Add Order Detail";
             ((System.ComponentModel.ISupportInitialize)(this.intOrderId)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.intQuantity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.floatDiscount)).EndInit();

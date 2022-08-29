@@ -155,7 +155,7 @@ namespace SalesWinApp
                 MessageBox.Show("Please select item to update!");
             }
         }
-
+        public static OrderDetail updateOrderDetail;
         private void btnUpdateOrderDetail_Click(object sender, EventArgs e)
         {
             if (orderDetailList.SelectedRows.Count > 0)
@@ -163,14 +163,14 @@ namespace SalesWinApp
                 int orderId = (int)orderDetailList.SelectedRows[0].Cells["OrderId"].Value;
                 int prodId = (int)orderDetailList.SelectedRows[0].Cells["ProductId"].Value;
 
-                var selectedOrder = db.OrderDetails.Find(orderId, prodId);
-                if (selectedOrder == null)
+                updateOrderDetail = db.OrderDetails.Where(x => x.OrderId == orderId && x.ProductId == prodId).FirstOrDefault();
+                if (updateOrderDetail == null)
                 {
-                    MessageBox.Show("Order has not existed !");
+                    MessageBox.Show("Order detail does not existed !");
                 }
                 else
                 {
-                    frmUpdateOrderDetail frmUpdateOrderDetail = new frmUpdateOrderDetail(selectedOrder);
+                    frmUpdateOrderDetail frmUpdateOrderDetail = new frmUpdateOrderDetail(updateOrderDetail);
                     frmUpdateOrderDetail.ShowDialog();
                     LoadData();
                 }

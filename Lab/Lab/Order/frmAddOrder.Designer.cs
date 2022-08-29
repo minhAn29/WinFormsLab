@@ -171,7 +171,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "frmAddOrder";
-            this.Text = "frmAddOrder";
+            this.Text = "Add Order";
             ((System.ComponentModel.ISupportInitialize)(this.intOrderId)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.decFreight)).EndInit();
             this.ResumeLayout(false);

@@ -192,7 +192,7 @@
             this.Controls.Add(this.orderDetailList);
             this.Controls.Add(this.orderList);
             this.Name = "frmOrderManagement";
-            this.Text = "frmOrderManagement";
+            this.Text = "Order Management";
             ((System.ComponentModel.ISupportInitialize)(this.orderList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderDetailList)).EndInit();
             this.ResumeLayout(false);

@@ -50,6 +50,7 @@
             this.btnUpdate.TabIndex = 25;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // floatDiscount
             // 
@@ -61,8 +62,8 @@
             // intQuantity
             // 
             this.intQuantity.Location = new System.Drawing.Point(156, 113);
-            this.intQuantity.Minimum = new decimal(new int[] {
-            1,
+            this.intQuantity.Maximum = new decimal(new int[] {
+            9999,
             0,
             0,
             0});
@@ -106,9 +107,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(61, 84);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 15);
+            this.label2.Size = new System.Drawing.Size(84, 15);
             this.label2.TabIndex = 19;
-            this.label2.Text = "ProductId";
+            this.label2.Text = "Product Name";
             // 
             // intOrderId
             // 
@@ -123,9 +124,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(61, 52);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 15);
+            this.label1.Size = new System.Drawing.Size(51, 15);
             this.label1.TabIndex = 17;
-            this.label1.Text = "OrderId";
+            this.label1.Text = "Order ID";
             // 
             // frmUpdateOrderDetail
             // 
@@ -142,7 +143,8 @@
             this.Controls.Add(this.intOrderId);
             this.Controls.Add(this.label1);
             this.Name = "frmUpdateOrderDetail";
-            this.Text = "frmUpdateOrderDetail";
+            this.Text = "Update Order Detail";
+            this.Load += new System.EventHandler(this.frmUpdateOrderDetail_Load);
             ((System.ComponentModel.ISupportInitialize)(this.floatDiscount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.intQuantity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.intOrderId)).EndInit();

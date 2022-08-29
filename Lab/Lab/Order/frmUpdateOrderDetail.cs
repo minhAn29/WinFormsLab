@@ -14,7 +14,8 @@ namespace SalesWinApp
 {
     public partial class frmUpdateOrderDetail : Form
     {
-        private SalesManagementContext db = new SalesManagementContext(GetConnectionString());
+        private SalesManagementContext db = InstanceDBContext.Instance;
+        private OrderDetail updateOrderDetail = frmOrderManagement.updateOrderDetail;
         public frmUpdateOrderDetail(OrderDetail selectedOrder)
         {
             InitializeComponent();
@@ -48,17 +49,19 @@ namespace SalesWinApp
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            var orderDetail = new OrderDetail()
-            {
-                OrderId = (int)intOrderId.Value,
-                UnitPrice = (decimal)db.Products.Find((int)intOrderId.Value).UnitPrice,
-                Quantity = (int)intQuantity.Value,
-                Discount = (double)floatDiscount.Value / 100,
-                ProductId = (int)productList.SelectedValue
-            };
-            db.OrderDetails.Update(orderDetail);
+            updateOrderDetail.UnitPrice = (decimal)db.Products.Find(updateOrderDetail.ProductId).UnitPrice;
+            updateOrderDetail.Quantity = (int)intQuantity.Value;
+            updateOrderDetail.Discount = (double)floatDiscount.Value / 100;
+            db.OrderDetails.Update(updateOrderDetail);
             db.SaveChanges();
             this.Close(); //Close form dialog
+        }
+
+        private void frmUpdateOrderDetail_Load(object sender, EventArgs e)
+        {
+            LoadMemberList();
+            productList.Enabled = false;
+            intOrderId.Enabled = false;
         }
     }
 }
