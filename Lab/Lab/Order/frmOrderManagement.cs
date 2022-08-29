@@ -71,9 +71,19 @@ namespace SalesWinApp
                 var deleteOrder = db.Orders.Find(Id);
                 if (deleteOrder != null)
                 {
-                    db.Orders.Remove(deleteOrder);
-                    db.SaveChanges();
-                    LoadData();
+                    var result = MessageBox.Show("Delete this order also delete all the order details. Are you sure", "Delete Confirm", MessageBoxButtons.YesNo);
+                    if (result == DialogResult.Yes)
+                    {
+                        var orderDetails = db.OrderDetails.Where(x=>x.OrderId==deleteOrder.OrderId).ToList();
+                        foreach (OrderDetail orderDetail in orderDetails)
+                        {
+                            db.OrderDetails.Remove(orderDetail);
+                            db.SaveChanges();
+                        }
+                        db.Orders.Remove(deleteOrder);
+                        db.SaveChanges();
+                        LoadData();
+                    }
                 }
             }
             else
