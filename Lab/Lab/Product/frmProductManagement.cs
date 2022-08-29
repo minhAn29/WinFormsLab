@@ -96,7 +96,7 @@ public partial class frmProductManagement : Form
 
     private void btnAdd_Click(object sender, EventArgs e)
     {
-        frmAddUpdateProduct frmAddUpdateProduct = new frmAddUpdateProduct();
+        frmAddProduct frmAddUpdateProduct = new frmAddProduct();
         frmAddUpdateProduct.ShowDialog();
         LoadData();
     }
@@ -110,9 +110,9 @@ public partial class frmProductManagement : Form
             updateProduct = db.Products.Find(productId);
             if (updateProduct != null)
             {
-                frmAddUpdateProduct frmAddUpdateProduct= new frmAddUpdateProduct();
+                frmUpdateProduct frmUpdateProduct=new frmUpdateProduct();
                 updateProduct = db.Products.Find(productId);
-                frmAddUpdateProduct.ShowDialog();
+                frmUpdateProduct.ShowDialog();
                 LoadData();
             }
 

@@ -11,29 +11,14 @@ using DataAccess.Models;
 
 namespace SalesWinApp
 {
-    public partial class frmAddUpdateProduct : Form
+    public partial class frmAddProduct : Form
     {
-        private SalesManagementContext db=InstanceDBContext.Instance;
-        private Product product = frmProductManagement.updateProduct;
-        public frmAddUpdateProduct()
+        private SalesManagementContext db = InstanceDBContext.Instance;
+        public frmAddProduct()
         {
             InitializeComponent();
         }
 
-        private void frmAddUpdateProduct_Load(object sender, EventArgs e)
-        {
-            if (product != null)
-            {
-                numProductId.Value = product.ProductId;
-                numProductId.Enabled = false;
-                numCategoryId.Value = product.CategoryId;
-                txtProductName.Text = product.ProductName;
-                txtWeight.Text = product.Weight;
-                numPrice.Value = product.UnitPrice;
-                numStock.Value = product.UnitslnStock;
-            }
-            
-        }
         private int productId;
         private int categoryId;
         private string productName;
@@ -45,17 +30,17 @@ namespace SalesWinApp
         {
             productId = decimal.ToInt32(numProductId.Value);
             categoryId = decimal.ToInt32(numCategoryId.Value);
-            productName=txtProductName.Text;
-            weight=txtWeight.Text;
+            productName = txtProductName.Text;
+            weight = txtWeight.Text;
             unitPrice = numPrice.Value;
             unitsInStock = decimal.ToInt32(numStock.Value);
-            if (productName==null || productName.Equals(""))
+            if (productName == null || productName.Equals(""))
             {
                 MessageBox.Show("Product name was null");
                 txtProductName.Focus();
                 return false;
             }
-            else if (weight.Equals("")|| weight==null)
+            else if (weight.Equals("") || weight == null)
             {
                 MessageBox.Show("Weight was null");
                 txtWeight.Focus();
@@ -73,9 +58,9 @@ namespace SalesWinApp
         {
             if (ValidAddInfo())
             {
-                if (IsDuplicated()==false)
+                if (IsDuplicated() == false)
                 {
-                    Product product = new Product()
+                    Product addProduct = new Product()
                     {
                         ProductId = productId,
                         CategoryId = categoryId,
@@ -84,7 +69,8 @@ namespace SalesWinApp
                         UnitPrice = unitPrice,
                         UnitslnStock = unitsInStock,
                     };
-                    db.Products.Add(product);
+                    
+                    db.Products.Add(addProduct);
                     db.SaveChanges();
                     this.Close();
                 }
@@ -95,9 +81,5 @@ namespace SalesWinApp
             }
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
