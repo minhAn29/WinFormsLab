@@ -27,7 +27,7 @@ namespace SalesWinApp
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json", true, true)
                 .Build();
-            var strConn = config["ConnectionStrings:CustomerAccountsDB"];
+            var strConn = config["ConnectionStrings:SalesManagementDB"];
             return strConn;
         }
 
