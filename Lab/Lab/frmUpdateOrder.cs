@@ -27,7 +27,7 @@ namespace SalesWinApp
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json", true, true)
                 .Build();
-            var strConn = config["ConnectionStrings:CustomerAccountsDB"];
+            var strConn = config["ConnectionStrings:SalesManagementDB"];
             return strConn;
         }
 
@@ -61,12 +61,6 @@ namespace SalesWinApp
             db.Orders.Update(order);
             db.SaveChanges();
             this.Close(); //Close form dialog
-        }
-
-
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            
         }
 
     }
