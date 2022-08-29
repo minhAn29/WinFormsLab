@@ -1,17 +1,20 @@
 {
   "version": 2,
-  "dgSpecHash": "0iZHcCILzgcxoFUliTREMeKxZmlu2m823exaUyJsbL6ByH/Zi3z2IrHZzrvJm/eAYXYJbJCXe2fECBcCgbjZpA==",
+  "dgSpecHash": "Al5YCK+KitswVuArrSGvU8UBgpfw9cTdGnVcvc7ZlbB8DpQFnfjWrjUvb/SmkMB6UB9ebEK/t55MEI1RiZGnzw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Tri Thinh\\OneDrive\\Documents\\WinFormsLab\\Lab\\Lab\\SalesWinApp.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Tri Thinh\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Tri Thinh\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\Tri Thinh\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
     "C:\\Users\\Tri Thinh\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.1.1\\microsoft.data.sqlclient.sni.runtime.2.1.1.nupkg.sha512",
     "C:\\Users\\Tri Thinh\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.8\\microsoft.entityframeworkcore.6.0.8.nupkg.sha512",
     "C:\\Users\\Tri Thinh\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.8\\microsoft.entityframeworkcore.abstractions.6.0.8.nupkg.sha512",
     "C:\\Users\\Tri Thinh\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\6.0.8\\microsoft.entityframeworkcore.analyzers.6.0.8.nupkg.sha512",
+    "C:\\Users\\Tri Thinh\\.nuget\\packages\\microsoft.entityframeworkcore.design\\6.0.8\\microsoft.entityframeworkcore.design.6.0.8.nupkg.sha512",
     "C:\\Users\\Tri Thinh\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\6.0.8\\microsoft.entityframeworkcore.relational.6.0.8.nupkg.sha512",
     "C:\\Users\\Tri Thinh\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\6.0.8\\microsoft.entityframeworkcore.sqlserver.6.0.8.nupkg.sha512",
+    "C:\\Users\\Tri Thinh\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\6.0.8\\microsoft.entityframeworkcore.tools.6.0.8.nupkg.sha512",
     "C:\\Users\\Tri Thinh\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\6.0.0\\microsoft.extensions.caching.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\Tri Thinh\\.nuget\\packages\\microsoft.extensions.caching.memory\\6.0.1\\microsoft.extensions.caching.memory.6.0.1.nupkg.sha512",
     "C:\\Users\\Tri Thinh\\.nuget\\packages\\microsoft.extensions.configuration\\6.0.1\\microsoft.extensions.configuration.6.0.1.nupkg.sha512",
@@ -53,5 +56,12 @@
     "C:\\Users\\Tri Thinh\\.nuget\\packages\\system.text.json\\6.0.0\\system.text.json.6.0.0.nupkg.sha512",
     "C:\\Users\\Tri Thinh\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\Tri Thinh\\OneDrive\\Documents\\WinFormsLab\\Lab\\Lab\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

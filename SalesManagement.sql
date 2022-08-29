@@ -58,5 +58,6 @@ CREATE TABLE OrderDetail(
 	Discount float not null,
 	FOREIGN KEY (ProductId) REFERENCES Product(ProductId),
 	FOREIGN KEY (OrderId) REFERENCES "Order"(OrderId),
+	PRIMARY KEY (ProductId,OrderId)
 )
 GO
