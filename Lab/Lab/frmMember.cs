@@ -137,9 +137,15 @@ namespace SalesWinApp
 
         private void btnLogout_Click(object sender, EventArgs e)
         { 
-            this.Close();
+            this.Hide();
             frmLogin frmLogin = new frmLogin();
+            frmLogin.member = null;
             frmLogin.Show();
+        }
+
+        private void tabControl1_Click(object sender, EventArgs e)
+        {
+            orderList.DataSource = _db.Orders.Where(o => o.MemberId == loginMember.MemberId && o.OrderId.ToString().Contains(txtKeyword.Text)).ToList();
         }
     }
 }
