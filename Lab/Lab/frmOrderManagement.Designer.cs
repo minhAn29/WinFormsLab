@@ -56,7 +56,7 @@
             this.orderList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.orderList.Size = new System.Drawing.Size(338, 296);
             this.orderList.TabIndex = 0;
-            this.orderList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.orderList_CellContentClick);
+            this.orderList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.orderList_CellContentClick);
             // 
             // orderDetailList
             // 

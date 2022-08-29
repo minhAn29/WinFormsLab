@@ -82,23 +82,24 @@ namespace DataAccess.Models
 
             modelBuilder.Entity<OrderDetail>(entity =>
             {
-                entity.HasNoKey();
+                entity.HasKey(e => new { e.ProductId, e.OrderId })
+                    .HasName("PK__OrderDet__5835C37183092966");
 
                 entity.ToTable("OrderDetail");
 
                 entity.Property(e => e.UnitPrice).HasColumnType("money");
 
                 entity.HasOne(d => d.Order)
-                    .WithMany()
+                    .WithMany(p => p.OrderDetails)
                     .HasForeignKey(d => d.OrderId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__OrderDeta__Order__2B3F6F97");
+                    .HasConstraintName("FK__OrderDeta__Order__2C3393D0");
 
                 entity.HasOne(d => d.Product)
-                    .WithMany()
+                    .WithMany(p => p.OrderDetails)
                     .HasForeignKey(d => d.ProductId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__OrderDeta__Produ__2A4B4B5E");
+                    .HasConstraintName("FK__OrderDeta__Produ__2B3F6F97");
             });
 
             modelBuilder.Entity<Product>(entity =>
